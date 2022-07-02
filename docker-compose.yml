@@ -2,6 +2,8 @@ version: '3.3'
 services:
   app:
     image: "audiogui"
+    build:
+      context: .
     restart: always
   www:
     ports:
