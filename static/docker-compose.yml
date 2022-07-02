@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  app:
+    image: "audiogui"
+    restart: always
+  www:
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - "app"
+    image: nginx
+    restart: always
